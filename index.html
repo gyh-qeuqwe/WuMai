@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WuMai</title>
+    <!--引入 Vue.js -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.min.js"></script>
+    <script defer src="WuMai/src/main.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      {{ a + b }}
+      <p v-html="message"></p>
+      <input type="text" v-model="name" @keyup.Enter="onSubmit">
+      <p>The latitude and longitude to be queried is {{ name }}</p>
+      <img v-bind:src="url" alt="">
+      <button @click="clickEventHandle"></button>
+      <!--<button v-on:click="clickEventHandle"></button>-->
+      <p :style="[textRed, textBold]">TEST TEXT</p>
+      <p :class="{'red': isRed}">test text</p>
+      <button @click="isRed = !isRed">change</button>
+      <p v-if="isRed">RED</p>
+      <p v-else>BLACK</p>
+    </div>
+  </body>
+</html>
