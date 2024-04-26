@@ -32,6 +32,15 @@
       <button @click="isRed = !isRed">change</button>
       <p v-if="isRed">RED</p>
       <p v-else>BLACK</p>
+      <p v-for="i in 10">{{ i }}</p>
+      <span v-for="(item, index) in arr"
+        :class="{red: index % 2 == 0 }"
+      >{{ index }}{{ item }}</span>
+      <p v-for="item in people" :key="item.id">{{ item.name }}</p>
+      
+      {{ fullName }}
+      {{ now }}
+      <button @click="change">change</button>
     </div>
   </body>
 </html>
